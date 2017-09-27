@@ -47,9 +47,9 @@ function runKey(key){
         if (key.key == 'Backspace'){ document.getElementById('log').innerHTML = '';}
         else if('1234'.indexOf(key.key) > -1){waveSelected = parseInt(key.key)-1;}
         else if(key.key == '\\'){
-            isHid = document.getElementById('controls').hidden;
+            controlsHidden = document.getElementById('controls').hidden;
             document.getElementById('controls').hidden = !isHid;
-            if(!isHid){
+            if(!controlsHidden){
                 window.scrollTo(0,document.body.scrollHeight);
             }else{
                 window.scrollTo(0,0);
@@ -65,8 +65,9 @@ function runKey(key){
     }
 }
 
-function unhideTextbox(){
-    document.getElementById('mobileIn').hidden = false;
+function toggleTextbox(){
+    textboxHidden = document.getElementById('mobileIn').hidden;
+    document.getElementById('mobileIn').hidden = !textboxHidden;
 }
 
 document.onkeyup = runKey;
