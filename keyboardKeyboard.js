@@ -26,9 +26,7 @@ function updateInfo(){
     document.getElementById('durationRead').innerText = duration;
     document.getElementById('offsetOctaveRead').innerText = offsetOctave;
     document.getElementById('waveTypeRead').innerText = waveTypes[waveSelected];
-    if (isMobile){
-        document.getElementById('mobileIn').hidden = false;
-    }
+
 }
 
 function log(text){
@@ -67,23 +65,6 @@ function runKey(key){
     }
 }
 //mobile testing
-var isMobile = {
-    Windows: function() {
-        return /IEMobile/i.test(navigator.userAgent);
-    },
-    Android: function() {
-        return /Android/i.test(navigator.userAgent);
-    },
-    BlackBerry: function() {
-        return /BlackBerry/i.test(navigator.userAgent);
-    },
-    iOS: function() {
-        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
-    }
-};
 
 document.onkeyup = runKey;
 document.onload = updateInfo;
