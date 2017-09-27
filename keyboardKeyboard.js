@@ -64,7 +64,10 @@ function runKey(key){
         updateInfo();
     }
 }
-//mobile testing
+
+function unhideTextbox(){
+    document.getElementById('mobileIn').hidden = false;
+}
 
 document.onkeyup = runKey;
 document.onload = updateInfo;
