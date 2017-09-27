@@ -55,7 +55,6 @@ function runKey(key){
             }
         }
 
-
         else if (key.key == 'ArrowLeft'){ offsetOctave -= 1;}
         else if (key.key == 'ArrowRight'){ offsetOctave += 1;}
 
@@ -66,4 +65,4 @@ function runKey(key){
 }
 
 document.onkeyup = runKey;
-updateInfo();
+document.onload = updateInfo;
