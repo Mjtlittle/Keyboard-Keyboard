@@ -48,7 +48,7 @@ function runKey(key){
         else if('1234'.indexOf(key.key) > -1){waveSelected = parseInt(key.key)-1;}
         else if(key.key == '\\'){
             controlsHidden = document.getElementById('controls').hidden;
-            document.getElementById('controls').hidden = !isHid;
+            document.getElementById('controls').hidden = !controlsHidden;
             if(!controlsHidden){
                 window.scrollTo(0,document.body.scrollHeight);
             }else{

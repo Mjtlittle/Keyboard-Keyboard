@@ -42,6 +42,5 @@ h1, h2, h3, h4 {
 }
 
 #log > span:last-child {
-    color: red;
     font-weight: bold;
 }
