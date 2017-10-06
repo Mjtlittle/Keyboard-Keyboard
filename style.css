@@ -1,6 +1,6 @@
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif, Arial, Helvetica;
     padding: 0px;
 }
 
@@ -14,14 +14,14 @@ a.hidden-link {
     color: black;
 }
 
-h1, h2, h3, h4 {
-    
-    margin: 5px;
+#mobileIn {
+
     font-weight: bold;
+    width: 35%;
+    border: none;
 }
 
-.mono {
-    font-family: Courier New, Courier, monospace;
+.variable {
     color: grey;
 }
 
