@@ -29,30 +29,26 @@ function updateInfo(){
 }
 
 function detectMobile() { 
-    if( navigator.userAgent.match(/Android/i)
+    return (navigator.userAgent.match(/Android/i)
     || navigator.userAgent.match(/webOS/i)
     || navigator.userAgent.match(/iPhone/i)
     || navigator.userAgent.match(/iPad/i)
     || navigator.userAgent.match(/iPod/i)
     || navigator.userAgent.match(/BlackBerry/i)
-    || navigator.userAgent.match(/Windows Phone/i)
-    ){
-        return true;
-    }
-    else {
-        return false;
-    }
+    || navigator.userAgent.match(/Windows Phone/i))
 }
 
 function logKey(text, octive){
-    document.getElementById('log').innerHTML += ('<span class="mono">' + text + '</span>');
+    document.getElementById('noteLog').innerHTML += ('<span class="note">' + text + '</span>');
     window.scrollTo(0,document.body.scrollHeight);
 }
 
 function runKey(key){
+    
     console.log(key);
 
     if (keyOrder.indexOf(key.key) > -1){
+        
         num = keyOrder.indexOf(key.key);
         frequency = rootFreq * Math.pow(Math.pow(2,1/12),num);
         
@@ -60,14 +56,16 @@ function runKey(key){
         logKey(' ' + keyNames[num%keyNames.length],  Math.floor(num/keyNames.length));
     
     } else if (shiftKeyOrder.indexOf(key.key) > -1){
+       
         num = shiftKeyOrder.indexOf(key.key);
         frequency = rootFreq * Math.pow(Math.pow(2,1/12),num+shiftOffset);
         
         playNote(Math.floor(frequency),duration);
-        logKey(' ' + keyNames[num%keyNames.length],  Math.floor(num/keyNames.length));
+        logKey(' ' + keyNames[num % keyNames.length],  Math.floor(num/keyNames.length));
+    
     } else {
         if (key.key == 'Backspace'){ 
-            document.getElementById('log').innerHTML = '';
+            document.getElementById('noteLog').innerHTML = '';
         }
         else if('1234'.indexOf(key.key) > -1){
             waveSelected = parseInt(key.key)-1;
