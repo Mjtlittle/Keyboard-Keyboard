@@ -44,7 +44,6 @@ function logKey(text, octive){
 }
 
 function runKey(key){
-    
     console.log(key);
 
     if (keyOrder.indexOf(key.key) > -1){
