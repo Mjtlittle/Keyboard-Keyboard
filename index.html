@@ -1,20 +1,28 @@
 <html>
     <head>
         <title>The Keyboard Keyboard</title>
-        <script src="keyboardKeyboard.js"></script>
+        <script src="scripts/jquery-3.2.1.min.js"></script>
+        <script src="scripts/keyboardKeyboard.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
-        <img hidden="true" src="controlLayout.svg" id="controls" align="middle" alt="Controls">
         
         <h1><a class="hidden-link" href="https://github.com/Mjtlittle/Keyboard-Keyboard">The Keyboard Keyboard</a></h1>
-        <h2>by Joshua Little</h2>
+        <h2 class="subinfo">by Joshua Little</h2>
         <br>
-        <h3>Press '\' to view the controls</h3>
+        
+        <h3 id="controlsToggle" onclick="toggleControls()">Show Controls</h3>
+        <div id="controls" hidden="true">
+            <h3 class="subinfo control">Keys in the middle 3 rows are all notes A through G repeated every 4 columns. Every key going from the top to the bottom is a half step on a piano.</h3>
+            <h3 class="subinfo control">- : decrease duration</h3>
+            <h3 class="subinfo control">= : increase duration</h3>
+            <h3 class="subinfo control">` : clear log</h3>
+        </div>
+
         <h3><input type="text" id="mobileIn" hidden="true" value="Click here if you need a keyboard on mobile"></input></h3>
-        <h3>Note Duration [up, down]: <span id="durationRead" class="variable"></span></h3>
-        <h3>Wave Type [1-4]: <span id="waveTypeRead" class="variable"></span></h3>
+        <h3>Note Duration: <span id="durationRead" class="subinfo variable"></span></h3>
+        <h3>Wave Type: <span id="waveTypeRead" class="subinfo variable"></span></h3>
         <h3>Key Log: </h3>
         <p id="noteLog"></p>
 
