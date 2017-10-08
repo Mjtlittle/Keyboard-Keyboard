@@ -1,4 +1,3 @@
-var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 var keyOrder = [113, 97, 122, 119, 115, 120, 101, 100, 99, 114, 102, 118, 116, 103, 98, 121, 104, 110, 117, 106, 109, 105, 107, 44, 111, 108, 46, 112, 59, 47, 91, 39];
 var switchWaveKeys = [49, 50, 51, 52];
 var clearLogKey = 96;
@@ -6,13 +5,15 @@ var subNoteDurrKey = 45;
 var addNoteDurrKey = 61;
 
 var keyNames = ['A','A\u266F','B','C','C\u266F','D','D\u266F','E','F','F\u266F','G','G\u266F'];
+
 var waveTypes = ['square','sine','sawtooth','triangle'];
 var waveSelected = 0;
+
 var rootFreq = 440.0;
 var duration = 100;
-var shiftOffset = 11;
-var isShifted = false;
 var onMobile = detectMobile();
+
+var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 function playNote(frequency, duration) {
     // create Oscillator node
@@ -106,8 +107,6 @@ function runKey(event){
     
     updateInfo();
 }
-
-//document.onkeyup = runKey;
 
 $(document).keypress(runKey);
 

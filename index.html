@@ -1,6 +1,13 @@
 <html>
     <head>
         <title>The Keyboard Keyboard</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        
+        <!-- ios stuff -->
+        <link rel="apple-touch-icon-precomposed" href="apple-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Keyboard">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
         <script src="scripts/jquery-3.2.1.min.js"></script>
         <script src="scripts/keyboardKeyboard.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -11,7 +18,6 @@
         <h1><a class="hidden-link" href="https://github.com/Mjtlittle/Keyboard-Keyboard">The Keyboard Keyboard</a></h1>
         <h2 class="subinfo">by Joshua Little</h2>
         <br>
-        
         <h3 id="controlsToggle" onclick="toggleControls()">Show Controls</h3>
         <div id="controls" hidden="true">
             <h3 class="subinfo control">Keys in the middle 3 rows are all notes A through G repeated every 4 columns. Every key going from the top to the bottom is a half step on a piano.</h3>
@@ -19,7 +25,6 @@
             <h3 class="subinfo control">= : increase duration</h3>
             <h3 class="subinfo control">` : clear log</h3>
         </div>
-
         <h3><input type="text" id="mobileIn" hidden="true" value="Click here if you need a keyboard on mobile"></input></h3>
         <h3>Note Duration: <span id="durationRead" class="subinfo variable"></span></h3>
         <h3>Wave Type: <span id="waveTypeRead" class="subinfo variable"></span></h3>
