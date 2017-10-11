@@ -3,15 +3,16 @@ var switchWaveKeys = [49, 50, 51, 52];
 var clearLogKey = 96;
 var subNoteDurrKey = 45;
 var addNoteDurrKey = 61;
-
 var keyNames = ['A','A\u266F','B','C','C\u266F','D','D\u266F','E','F','F\u266F','G','G\u266F'];
-
 var waveTypes = ['square','sine','sawtooth','triangle'];
 var waveSelected = 0;
-
 var rootFreq = 440.0;
 var duration = 100;
 var onMobile = detectMobile();
+
+var patternLog = [];
+var patternLogLength = 10;
+var keyPatterns = [{'keys':['A','A','A'],'func':function (){}}];
 
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -58,10 +59,28 @@ function toggleControls (){
     }
 }
 
+function checkPatterns (){
+    
+    console.log(patternLog);
+    len = keyPatterns.length;
+    for (p=0; p<len; p++){
+        pattern = keyPatterns[p];
+
+        if (len >= pattern['keys'].length)
+        console.log(p);
+    }
+}
+
 function logKey(num, octive){
     name = keyNames[num%keyNames.length];
     hue = Math.round(num/32*100);
 
+    //pattern testing
+    patternLog.push(name);
+    if (patternLog.length > patternLogLength){
+        patternLog = patternLog.slice(Math.max(patternLog.length - patternLogLength, 1));        
+    }
+    
     $note = $('<span>',{'class':'note'});
     $note.html(name)
     $('#noteLog').append($note);
@@ -106,6 +125,7 @@ function runKey(event){
     }
     
     updateInfo();
+    checkPatterns()
 }
 
 $(document).keypress(runKey);
