@@ -1,6 +1,6 @@
 var keyOrder = [113, 97, 122, 119, 115, 120, 101, 100, 99, 114, 102, 118, 116, 103, 98, 121, 104, 110, 117, 106, 109, 105, 107, 44, 111, 108, 46, 112, 59, 47, 91, 39];
 var switchWaveKeys = [49, 50, 51, 52];
-var clearLogKey = 96;
+var clearLogKey = 48;
 var subNoteDurrKey = 45;
 var addNoteDurrKey = 61;
 
@@ -70,7 +70,7 @@ function logKey(num, octive){
 
 function runKey(event){
     key = event.keyCode;
-    
+    console.log(key);
     if (keyOrder.indexOf(key) > -1){
         num = keyOrder.indexOf(key);
         frequency = rootFreq * Math.pow(Math.pow(2,1/12),num);
