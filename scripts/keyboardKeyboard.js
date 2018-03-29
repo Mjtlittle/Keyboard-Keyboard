@@ -70,7 +70,7 @@ function logKey(num, octive){
 
 function runKey(event){
     key = event.keyCode;
-    console.log(key);
+    
     if (keyOrder.indexOf(key) > -1){
         num = keyOrder.indexOf(key);
         frequency = rootFreq * Math.pow(Math.pow(2,1/12),num);
