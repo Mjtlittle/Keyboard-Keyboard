@@ -1,12 +1,13 @@
 
-* {
-    --primary-color: #ECE9E5;
-    --secondary-color: #8B8984;
-    --background-color: #2C2929;
-    
+* {    
     font-family: 'Roboto', sans-serif, Arial, Helvetica;
 }
 
+:root {
+    --primary-color: #ECE9E5;
+    --secondary-color: #8B8984;
+    --background-color: #2C2929;
+}
 
 h1, h2, h3 {
     margin: 10px;

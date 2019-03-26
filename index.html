@@ -1,37 +1,49 @@
 <html>
-    <head>
-        <title>The Keyboard Keyboard</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        
-        <!-- ios stuff -->
-        <link rel="apple-touch-icon-precomposed" href="apple-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Keyboard">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-capable" content="yes">
 
-        <script src="scripts/jquery-3.2.1.min.js"></script>
-        <script src="scripts/keyboardKeyboard.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
-        
-        <h1><a class="hidden-link" href="https://github.com/Mjtlittle/Keyboard-Keyboard">The Keyboard Keyboard</a></h1>
-        <h2 class="subinfo">by Joshua Little</h2>
-        <br>
-        <h3 id="controlsToggle" onclick="toggleControls()">Show Controls</h3>
-        <div id="controls" hidden="true">
-            <h3 class="subinfo control">Keys in the middle 3 rows are all notes A through G repeated every 4 columns. Every key going from the top to the bottom is a half step on a piano.</h3>
-            <h3 class="subinfo control">-   : decrease note duration</h3>
-            <h3 class="subinfo control">=   : increase note duration</h3>
-            <h3 class="subinfo control">1-4 : change the wave type</h3>
-            <h3 class="subinfo control">0   : clear key log</h3>
-        </div>
-        <h3><input type="text" id="mobileIn" hidden="true" value="Click here if you need a keyboard on mobile"></input></h3>
-        <h3>Note Duration: <span id="durationRead" class="subinfo variable"></span></h3>
-        <h3>Wave Type: <span id="waveTypeRead" class="subinfo variable"></span></h3>
-        <h3>Key Log: </h3>
-        <p id="noteLog"></p>
+<head>
+    <title>The Keyboard Keyboard</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    </body>
+    <!-- ios stuff -->
+    <link rel="apple-touch-icon-precomposed" href="apple-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Keyboard">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/keyboardKeyboard.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <h1><a class="hidden-link" href="https://github.com/Mjtlittle/Keyboard-Keyboard">The Keyboard Keyboard</a></h1>
+    <h2 class="subinfo">by Joshua Little</h2>
+    <br>
+    <h3 class="subinfo">Notes are arranged from left to right, top to bottom on the keyboard (not including the number
+        keys). For example, to play an E4, press [d]. To go up a note from there (F4), press the key beneath it, [c].
+        Cutoff duration can be increased or decreased by pressing either [-] or [=].
+    </h3>
+    <br>
+    <div style="float: left">
+        <h3><input type="text" id="mobileIn" hidden="true" value="Click here if you need a keyboard on mobile"></input>
+        </h3>
+        <h3>Last Note Released: <span id="last_note_info" class="subinfo variable"></span></h3>
+        <h3>Secrets: <span id="secrets_enabled_info" class="subinfo variable"></span></h3>
+        <h3>One Channel Limit: <span id="mono_mode_info" class="subinfo variable"></span></h3>
+        <h3>Cutoff Duration: <span id="cutoff_info" class="subinfo variable"></span></h3>
+        <h3>Wave Type: <span id="wave_type_info" class="subinfo variable"></span></h3>
+    </div>
+
+    <div style="float: right">
+            <h3 class="subinfo">|</h3>
+            <h3 class="subinfo">[0]</h3>
+            <h3 class="subinfo">[9]</h3>
+            <h3 class="subinfo">[-],[=]</h3>
+            <h3 class="subinfo">[1-4]</h3>
+    </div>
+
+</body>
+
 </html>
